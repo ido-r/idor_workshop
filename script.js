@@ -84,7 +84,7 @@ var places = {
                 'type': 'Point',
                 'coordinates': [-77.007481, 38.876516]
             }
-        }
+        },
     ]
 };
 var filterGroup = document.getElementById('filter-group');
@@ -163,6 +163,9 @@ function setupMap(center) {
 
 
     map.on('contextmenu', function(e) {
+
+        
+
         var geojson = {
             type: 'FeatureCollection',
             features: [{
@@ -173,7 +176,7 @@ function setupMap(center) {
               },
               properties: {
                 description: 'DOR IS THE BOSS',
-                icon: 'music',
+                icon: 'new-entry',
                 title: 'marker'
               }
             }]
@@ -183,25 +186,21 @@ function setupMap(center) {
         geojson.features.forEach(function(marker) {
             var el = document.createElement('div');
             el.className = 'marker';
-            filterGroup.appendChild(el)
-    
             // make a marker for each feature and add to the map
             new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates).addTo(map);
-            // .setPopup(
-            //     new mapboxgl.Popup({ offset: 25 }) // add popups
-            //         .setHTML(
-            //         '<h3>' +
-            //         marker.properties.title +
-            //         '</h3><p>' +
-            //         marker.properties.description +
-            //         '</p>'
-            //         ) 
-            // )
-            // .addTo(map);
-        });
-    });
-    
-
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(
+                new mapboxgl.Popup({ offset: 25 }) // add popups
+                    .setHTML(
+                    '<h3>' +
+                    marker.properties.title +
+                    '</h3><p>' +
+                    marker.properties.description +
+                    '</p>'
+                    ) 
+            )
+            .addTo(map);
+        });  
+    });  
 }
 
