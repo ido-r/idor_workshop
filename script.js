@@ -126,11 +126,6 @@ function setupMap(center) {
                     'type': 'symbol',
                     'source': 'places',
                     'layout': {
-                        // These icons are a part of the Mapbox Light style.
-                        // To view all images available in a Mapbox style, open
-                        // the style in Mapbox Studio and click the "Images" tab.
-                        // To add a new image to the style at runtime see
-                        // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
                         'icon-image': symbol + '-15',
                         'icon-allow-overlap': true
                     },
@@ -163,9 +158,6 @@ function setupMap(center) {
 
 
     map.on('contextmenu', function(e) {
-
-        
-
         var geojson = {
             type: 'FeatureCollection',
             features: [{
