@@ -22,7 +22,7 @@ var places = {
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [ 34.76903675714189,32.056729876575176]
+                'coordinates': [-77.038659, 38.931567]
             }
         },
         {
@@ -32,7 +32,7 @@ var places = {
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [ 34.76841544409283,32.05656358891689]
+                'coordinates': [-77.003168, 38.894651]
             }
         },
         {
@@ -52,7 +52,7 @@ var places = {
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [ 34.76762420147619,32.05745276630976]
+                'coordinates': [-77.052477, 38.943951]
             }
         },
         {
@@ -62,7 +62,7 @@ var places = {
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [34.768071255722404, 32.05665236662568]
+                'coordinates': [-77.031706, 38.914581]
             }
         },
         {
@@ -72,7 +72,7 @@ var places = {
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [ 34.76829478284551,32.05703125492289]
+                'coordinates': [-77.020945, 38.878241]
             }
         },
         {
@@ -82,7 +82,7 @@ var places = {
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [ 34.76923918494954, 32.0574953909517]
+                'coordinates': [-77.007481, 38.876516]
             }
         },
     ]
@@ -102,11 +102,11 @@ function setupMap(center) {
     //Add +,- and rotate
     map.addControl(nav);
 
-    var directions = new MapboxDirections({
-        accessToken: mapboxgl.accessToken,
-      });
+    // var directions = new MapboxDirections({
+    //     accessToken: mapboxgl.accessToken,
+    //   });
       
-    map.addControl(directions, 'top-left');     
+    // map.addControl(directions, 'top-left');     
 
     map.on('load', function () {
         // Add a GeoJSON source containing place coordinates and information.
