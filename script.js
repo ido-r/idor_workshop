@@ -102,11 +102,11 @@ function setupMap(center) {
     //Add +,- and rotate
     map.addControl(nav);
 
-    // var directions = new MapboxDirections({
-    //     accessToken: mapboxgl.accessToken,
-    //   });
+    var directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+      });
       
-    // map.addControl(directions, 'top-left');     
+    map.addControl(directions, 'top-left');     
 
     map.on('load', function () {
         // Add a GeoJSON source containing place coordinates and information.
